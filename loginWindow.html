@@ -21,19 +21,27 @@
 
     <script>
     
-        const electron = require('electron');
-        const {ipcRenderer} = electron;
-    
-        const form = document.querySelector('form');
+    function signUpWithEmailPassword() {
+        
         form.addEventListener('submit', submitForm);
 
-        function submitForm(e) {
+        var email = "test@example.com";
+        var password = "hunter2";
 
-            e.preventDefault();
-            const item = document.querySelector('#item').value;
-            ipcRenderer.send('item:add', item);
-        
-        }
+        // [START auth_signup_password]
+        firebase.auth().createUserWithEmailAndPassword(email, password)
+            .then((userCredential) => {
+            // Signed in 
+            var user = userCredential.user;
+            // ...
+            })
+            .catch((error) => {
+            var errorCode = error.code;
+            var errorMessage = error.message;
+            // ..
+            });
+        // [END auth_signup_password]
+    }
 
     </script>
 </body>

@@ -68,10 +68,45 @@ ipcMain.on('item:add', function (e, item){
     addWindow.close();
 });
 
+function createSignupWindow() {
+    // Creating Window
+    mainWindow.loadURL(url.format({
+        pathname: path.join(__dirname, 'loginWindow.html'),
+        protocol: 'file:',
+        slashes: true
+    }));
+}
+
+function returnToHome() {
+    mainWindow.loadURL(url.format({
+        pathname: path.join(__dirname, 'mainWindow.html'),
+        protocol: 'file:',
+        slashes: true
+    }));
+}
+
 
 // Create menu template
 const mainMenuTempalte = [
     {
+        label: 'Home',
+        click() {
+            returnToHome();
+        }
+    },{
+        label: 'Login',
+        submenu: [
+            {
+                label: 'Login',
+            },
+            {
+                label: 'Sign-Up',
+                click(){
+                    createSignupWindow();
+                }
+            }
+        ]
+    },{
         label: 'File',
         submenu: [
         {

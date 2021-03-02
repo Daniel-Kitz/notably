@@ -9,6 +9,7 @@
   "author": "Daniel Kitz",
   "license": "MIT",
   "dependencies": {
-    "electron": "^11.3.0"
+    "electron": "^11.3.0",
+    "firebase": "^8.2.9"
   }
 }
