@@ -2,19 +2,22 @@ const electron = require('electron');
 const url = require('url');
 const path = require('path');
 
-const { app, BrowserWindow, Menu, ipcMain } = electron;
+const { app, BrowserWindow, Menu, screen } = electron;
 
 let mainWindow;
-let addWindow;
+let loginWindow;
+let signupWindow;
 
 // Listen for app to be ready
 app.on('ready', function() {
-    
+
     // Creating Window
     mainWindow = new BrowserWindow({
         webPreferences: {
             nodeIntegration: true //due to a common bug, when nodeIntegration is false Javascript functions simply don't seem to work: https://www.electronjs.org/docs/faq#i-can-not-use-jqueryrequirejsmeteorangularjs-in-electron
-        }
+        },
+        width: 1450,
+        height: 800
     });
 
     //Load html into window
@@ -36,87 +39,66 @@ app.on('ready', function() {
     Menu.setApplicationMenu(mainMenu)
 });
 
-// Handle create add Window
-function createAddWindow() {
-    // Creating Window
-    addWindow = new BrowserWindow({
+
+function createLoginWindow() {
+
+    loginWindow = new BrowserWindow({
         webPreferences: {
-            nodeIntegration: true //due to a common bug, when nodeIntegration is false Javascript functions simply don't seem to work: https://www.electronjs.org/docs/faq#i-can-not-use-jqueryrequirejsmeteorangularjs-in-electron
+            nodeIntegration: true 
         },
-        width: 300,
-        height: 200,
-        title: 'Add Shoping List Item',
+        title: 'Login'
     });
 
-    //Load html into window
-    addWindow.loadURL(url.format({
-        pathname: path.join(__dirname, 'addWindow.html'),
-        protocol: 'file:',
-        slashes: true
-    }));
-
-    //Garbage Collection Handle
-    addWindow.on('close', function() {
-        addWindow = null;
-    })
-}
-
-// Catch Item Adding
-ipcMain.on('item:add', function (e, item){
-    console.log(item);
-    mainWindow.webContents.send('item:add', item);
-    addWindow.close();
-});
-
-function createSignupWindow() {
-    // Creating Window
-    mainWindow.loadURL(url.format({
+    loginWindow.loadURL(url.format({
         pathname: path.join(__dirname, 'loginWindow.html'),
         protocol: 'file:',
         slashes: true
     }));
+
+    loginWindow.on('close', function() {
+        loginWindow = null;
+    })
 }
 
-function returnToHome() {
-    mainWindow.loadURL(url.format({
-        pathname: path.join(__dirname, 'mainWindow.html'),
+function createSignupWindow() {
+
+    signupWindow = new BrowserWindow({
+        webPreferences: {
+            nodeIntegration: true
+        },
+        width: 1300,
+        height: 700,
+        title: 'SignUp'
+    });
+
+    signupWindow.loadURL(url.format({
+        pathname: path.join(__dirname, 'signupWindow.html'),
         protocol: 'file:',
         slashes: true
     }));
-}
 
+    signupWindow.on('close', function() {
+        signupWindow = null;
+    })
+
+}
 
 // Create menu template
 const mainMenuTempalte = [
     {
-        label: 'Home',
-        click() {
-            returnToHome();
-        }
-    },{
-        label: 'Login',
-        submenu: [
-            {
-                label: 'Login',
-            },
-            {
-                label: 'Sign-Up',
-                click(){
-                    createSignupWindow();
-                }
-            }
-        ]
-    },{
         label: 'File',
         submenu: [
         {
-            label: 'Add Item',
+            label: 'Login',
             click(){
-                createAddWindow();
+                createLoginWindow();
             }
         },
         {
-            label: 'Clear Items'
+            label: 'Sign Up',
+            click(){
+                createSignupWindow();
+            }
         },
         {
             label: 'Quit',

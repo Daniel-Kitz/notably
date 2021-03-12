@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Open+Sans&display=swap');
+
+:root {
+    font-size: 100%;
+    font-size: 16px;
+    line-height: 1.5;
+    --primary-orange: #EBCB8B;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 580;
+}
+
+h1 {
+    font-size: 2.25rem;
+    font-weight: 780;
+    font-family: 'Open Sans', sans-serif;
+}
+
+h2 {
+    font-size: 1.5rem;
+    font-weight: 780;
+    font-family: 'Open Sans', sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: var(--primary-orange);
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.small {
+    font-size: 80%;
+    text-align: center;
+}
+
+.two-cols {
+    display: flex;
+    flex-direction: column;
+}
+
+.col-l {
+    height: 200px;
+    color: white;
+}
+
+.col-l, .col-r {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.col-l {
+    background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5)), url('file:///images/signuip-background.jpg');
+    background-size: cover;
+}
+
+.col-l .copy {
+    text-align: center;
+    -webkit-font-smoothing: antialiased;
+}
+
+.col-l p {
+    font-weight: 400;
+}
+
+.col-r .copy {
+    color: black;
+    text-align: center;
+}
+
+.col-r .copy p {
+    margin: 1.5em 0;
+    font-size: 0.875rem;
+}
+
+.col-r form {
+    width: 328px;
+}
+
+form input[type="email"],
+form input[type="password"] {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    border-radius: 8px;
+    border: 1px solid #c4c4c4;
+    padding: 1em;
+    margin-bottom: 1.25rem;
+    font-size: 0.875rem;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 0.75rem;
+}
+
+.signup-btn {
+    display: block;
+    width: 100%;
+    background: var(--primary-orange);
+    color: white;
+    font-weight: 700;
+    border: none;
+    padding: 1rem;
+    border-radius: 0.75rem;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.signup-btn:hover {
+    background: #e6b85e;
+    cursor: pointer;
+}
+
+@media screen and (min-width: 900px) {
+    .two-cols {
+        flex-direction: row;
+        height: 100vh;
+    }
+    .col-l,
+    .col-r {
+        display: flex;
+        width: 50%;
+        height: auto;
+    }
+}
+
