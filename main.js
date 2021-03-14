@@ -2,42 +2,33 @@ const electron = require('electron');
 const url = require('url');
 const path = require('path');
 
-const { app, BrowserWindow, Menu, screen } = electron;
+const { createAuthWindow } = require('./main/auth-process');
+const createAppWindow = require('./main/app-process');
+const authService = require('./services/auth-service');
 
-let mainWindow;
+const { app, Menu } = electron;
+
 let loginWindow;
 let signupWindow;
 
+async function mainWindow() {
+    try {
+        await authService.refreshTokens();
+
+        const mainMenu = Menu.buildFromTemplate(mainMenuTempalte);
+        Menu.setApplicationMenu(mainMenu);
+
+        return createAppWindow();
+
+    } catch (err) {
+
+        createAuthWindow();
+
+    }
+}
+
 // Listen for app to be ready
-app.on('ready', function() {
-
-    // Creating Window
-    mainWindow = new BrowserWindow({
-        webPreferences: {
-            nodeIntegration: true 
-        },
-        width: 1450,
-        height: 800
-    });
-
-    //Load html into window
-    mainWindow.loadURL(url.format({
-        pathname: path.join(__dirname, 'mainWindow.html'),
-        protocol: 'file:',
-        slashes: true
-    }));
-
-    // Close app on Quit
-    mainWindow.on('closed', function() {
-        app.quit();
-    });
-
-    // Build menu from template
-    const mainMenu = Menu.buildFromTemplate(mainMenuTempalte);
-
-    // Insert menu
-    Menu.setApplicationMenu(mainMenu)
-});
+app.on('ready', mainWindow());
 
 
 function createLoginWindow() {
@@ -110,6 +101,10 @@ const mainMenuTempalte = [
         ]
     }
 ];
+
+app.on('window-all-closed', () => {
+    app.quit();
+});
 
 //Fix 'electron' in mainMenu Bug on Mac
 if (process.platform == 'darwin') {
