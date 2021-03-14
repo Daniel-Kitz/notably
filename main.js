@@ -14,7 +14,7 @@ app.on('ready', function() {
     // Creating Window
     mainWindow = new BrowserWindow({
         webPreferences: {
-            nodeIntegration: true //due to a common bug, when nodeIntegration is false Javascript functions simply don't seem to work: https://www.electronjs.org/docs/faq#i-can-not-use-jqueryrequirejsmeteorangularjs-in-electron
+            nodeIntegration: true 
         },
         width: 1450,
         height: 800
@@ -44,7 +44,7 @@ function createLoginWindow() {
 
     loginWindow = new BrowserWindow({
         webPreferences: {
-            nodeIntegration: true 
+            nodeIntegration: true
         },
         title: 'Login'
     });
