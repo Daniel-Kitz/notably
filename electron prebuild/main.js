@@ -28,7 +28,7 @@ async function mainWindow() {
 }
 
 // Listen for app to be ready
-app.on('ready', mainWindow());
+app.on('ready', mainWindow);
 
 
 function createLoginWindow() {

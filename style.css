@@ -58,7 +58,7 @@ a:hover {
 }
 
 .col-l {
-    background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5)), url('file:///images/signuip-background.jpg');
+    background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5)), url('/images/signuip-background.jpg');
     background-size: cover;
 }
 
