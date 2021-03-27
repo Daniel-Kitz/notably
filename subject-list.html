@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul id="list">
+        
+    </ul>
+
+    <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-firestore.js"></script>
+
+    <script>
+
+    // DEBUG: CHECK IF USER IS CURRENTLY SIGNED IN
+    // window.addEventListener('load', (e) => {
+    //     firebase.auth().onAuthStateChanged(function(user) {
+    //         if (user) {
+                
+    //         } else {
+    //             console.log("please sign in")
+    //         }
+    //     });
+    // })
+
+    var firebaseConfig = {
+        apiKey: "AIzaSyByJicTpNtLVRU6TX1J7bm8H13AywgaZ2I",
+        authDomain: "notably-53b71.firebaseapp.com",
+        projectId: "notably-53b71",
+        appId: "1:504554327328:web:dccb7dd1ace0b46a4c9b45",
+        measurementId: "G-T58SYWJMXM"
+    };
+
+    firebase.initializeApp(firebaseConfig);
+    
+    const auth = firebase.auth();
+    const db = firebase.firestore();
+
+    db.settings({
+        timestampsInSnapshots: true
+    });
+
+    </script>
+    <script src="/js/subject-list.js"></script>
+
+</body>
+</html>

@@ -11,7 +11,7 @@ window.addEventListener('load', (e) => {
             login.classList.remove("d-none");
         }
     });
-})
+});
 
 logout.addEventListener('click', (e) => {
     

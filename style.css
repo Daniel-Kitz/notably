@@ -135,3 +135,50 @@ label {
     }
 }
 
+/* TIMETABLE */
+
+tr th {
+    width: 200px;
+}
+
+td {
+    padding: 0px !important;
+    margin: 0px;
+}
+
+.timetable-card {
+    height: 100px;
+    border-radius: 0;
+}
+
+/* CARD COLORS */
+
+.blue {
+    background-color: #3498db;
+    border-bottom: 4px solid #2980b9;
+    color: white
+}
+
+.yellow {
+    background-color: #f1c40f;
+    border-bottom: 4px solid #f39c12;
+    color: white
+}
+
+.red {
+    background-color: #e74c3c;
+    border-bottom: 4px solid #c0392b;
+    color: white
+}
+
+.green {
+    background-color: #2ecc71;
+    border-bottom: 4px solid #27ae60;
+    color: white
+}
+
+.turqouise {
+    background-color: #1abc9c;
+    border-bottom: 4px solid #16a085;
+    color: white
+}
