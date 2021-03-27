@@ -59,26 +59,30 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.min.js" integrity="sha384-nsg8ua9HAw1y0W1btsyWgBklPnCUAFLuTMS2G72MMONqmOymq585AcH49TLBQObG" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/boxicons@latest/dist/boxicons.js"></script>
 
-    <!-- <script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-firestore.js"></script>
 
-        const electron = require('electron');
-        const {ipcRenderer} = electron;
-        const tbody = document.querySelector('tbody');
+    <script>
+    
+    var firebaseConfig = {
+        apiKey: "AIzaSyByJicTpNtLVRU6TX1J7bm8H13AywgaZ2I",
+        authDomain: "notably-53b71.firebaseapp.com",
+        projectId: "notably-53b71",
+        appId: "1:504554327328:web:dccb7dd1ace0b46a4c9b45",
+        measurementId: "G-T58SYWJMXM"
+    };
 
-        ipcRenderer.on('item:add', function (e, item) {
+    firebase.initializeApp(firebaseConfig);
+    
+    const auth = firebase.auth();
+    const db = firebase.firestore();
 
-            const tablerow = document.createElement('tr');
-            const thead = document.createElement('th')
-            thead.setAttribute('scope', 'row')
-            const itemText = document.createTextNode(item);
-            const td = document.createElement('td');
-            td.appendChild(itemText);
-            tablerow.appendChild(thead);
-            tablerow.appendChild(td);
-            tbody.appendChild(tablerow);
-        });
-        
-    </script> -->
+    db.settings({
+        timestampsInSnapshots: true
+    });
+
+    </script>
 
 </body>
 </html>
