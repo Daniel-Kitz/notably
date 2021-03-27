@@ -7,6 +7,10 @@
 </head>
 <body>
 
+    <div class="container mt-1">
+        <button class="signup-btn" id="logout-btn">Logout</button>
+        <button class="signup-btn" id="login-btn">Login</button>
+    </div>
     <div class="container mt-5 p-4">
         <table class="table table-light table-hover table-bordered border-dark">
             <thead>
@@ -64,7 +68,18 @@
     <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-firestore.js"></script>
 
     <script>
-    
+
+    // DEBUG: CHECK IF USER IS CURRENTLY SIGNED IN
+    window.addEventListener('load', (e) => {
+        firebase.auth().onAuthStateChanged(function(user) {
+            if (user) {
+                
+            } else {
+                console.log("please sign in")
+            }
+        });
+    })
+
     var firebaseConfig = {
         apiKey: "AIzaSyByJicTpNtLVRU6TX1J7bm8H13AywgaZ2I",
         authDomain: "notably-53b71.firebaseapp.com",
@@ -83,6 +98,7 @@
     });
 
     </script>
+    <script src="/js/checker.js"></script>
 
 </body>
 </html>
