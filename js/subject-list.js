@@ -17,6 +17,12 @@ const setuplist = (data) => {
 
 }
 
-db.collection('subjects').get().then(snapshot => {
-    setuplist(snapshot.docs)
-})
+auth.onAuthStateChanged(user => {
+    if (user) {
+        db.collection('subjects').get().then(snapshot => {
+            setuplist(snapshot.docs)
+        })
+    } else {
+        setuplist([ ])
+    }
+});
