@@ -1,4 +1,4 @@
-var timetable = document.querySelector('#sample-timetable')
+var pagetable = document.querySelector('#sample-timetable')
 
 var timetable = {}
 
@@ -27,3 +27,16 @@ const timetablesetup = (data) => {
     })
 
 }
+
+var tablehead = pagetable.children[0];
+
+console.log(tablehead.childElementCount);
+
+for (var n = 1; n < 6; n++) {
+    for (var i = 1; i < tablehead.childElementCount; i++) {
+
+        console.log(tablehead.children[i].children[n]);
+    
+    }
+}
+ 
