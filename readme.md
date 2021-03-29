@@ -1,10 +1,11 @@
 # SOURCES
 
-## General Electron
+## General Code Snippets
 
-1. https://www.electronjs.org/docs
+### Itemloop
+1. https://stackoverflow.com/questions/17981437/how-to-add-event-listeners-to-an-array-of-objects
 
 ## Authentication
 
-1. https://auth0.com/blog/securing-electron-applications-with-openid-connect-and-oauth-2/
+1. https://firebase.google.com/docs/auth
 

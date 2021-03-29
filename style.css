@@ -144,6 +144,30 @@ tr th {
 td {
     padding: 0px !important;
     margin: 0px;
+    justify-content: center;
+    align-items: center;
+}
+
+.empty-timetable-card {
+    height: 100px;
+    align-items: center;
+    justify-content: center;
+}
+
+.empty-timetable-card .card-body {
+    margin: 0;
+    padding: 0;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+.clickable {
+    cursor: pointer;
+}
+
+.filled {
+    cursor: pointer;
 }
 
 .timetable-card {
