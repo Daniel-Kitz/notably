@@ -137,8 +137,13 @@ label {
 
 /* TIMETABLE */
 
+.invis {
+    display: none;
+}
+
 tr th {
     width: 200px;
+    height: 100px;
 }
 
 td {
