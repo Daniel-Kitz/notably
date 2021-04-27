@@ -135,6 +135,26 @@ label {
     }
 }
 
+/* Blackbox */
+
+.blackbox {
+    margin: none;
+    padding: none;
+    background: white;
+    width: 100%;
+    height: 100%;
+    display: block;
+    position: absolute;
+    z-index: 999;
+}
+
+.spinner-border {
+    position: absolute;
+    display: flexbox;
+    margin-top: 25%;
+    margin-left: 50%;
+}
+
 /* TIMETABLE */
 
 .invis {

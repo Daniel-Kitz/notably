@@ -7,7 +7,13 @@
 </head>
 <body>
 
-        <!-- Modal -->
+    <div class="blackbox">
+        <div class="spinner-border" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+    </div>
+
+    <!-- Modal -->
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
         <div class="modal-content">
@@ -54,133 +60,41 @@
                 <tr>
                     <th scope="row">1</th>
                     <td >
-                        <div class="card timetable-card blue filled invis">
-                            <div class="card-body">
-                              <h5 class="card-title">Mathe</h5>
-                              <h6 class="card-subtitle mb-1">Mauch</h6>
-                              <h6 class="card-subtitle mt-1">009</h6>                   
-                            </div>
-                        </div>
                     </td>
                     <td>
-                        <div class="card timetable-card yellow filled invis">
-                            <div class="card-body">
-                              <h5 class="card-title">Mathe</h5>
-                              <h6 class="card-subtitle mb-1">Mauch</h6>
-                              <h6 class="card-subtitle mt-1">009</h6>                   
-                            </div>
-                        </div>
                     </td>
                     <td>
-                        <div class="card timetable-card yellow filled invis">
-                            <div class="card-body">
-                              <h5 class="card-title">Mathe</h5>
-                              <h6 class="card-subtitle mb-1">Mauch</h6>
-                              <h6 class="card-subtitle mt-1">009</h6>                   
-                            </div>
-                        </div>
+                    </div>
                     </td>
                     <td>
-                        <div class="card timetable-card turqouise filled invis">
-                            <div class="card-body">
-                              <h5 class="card-title">Mathe</h5>
-                              <h6 class="card-subtitle mb-1">Mauch</h6>
-                              <h6 class="card-subtitle mt-1">009</h6>                   
-                            </div>
-                        </div>
                     </td>
                     <td>
-                        <div class="card timetable-card red filled invis">
-                            <div class="card-body">
-                              <h5 class="card-title">Mathe</h5>
-                              <h6 class="card-subtitle mb-1">Mauch</h6>
-                              <h6 class="card-subtitle mt-1">009</h6>                   
-                            </div>
-                        </div>
                     </td>
                 </tr>
                 <tr>
                     <th scope="row">2</th>
                     <td >
-                        <div class="card timetable-card blue filled invis">
-                            <div class="card-body">
-                              <h5 class="card-title">Mathe</h5>
-                              <h6 class="card-subtitle mb-1">Mauch</h6>
-                              <h6 class="card-subtitle mt-1">009</h6>                   
-                            </div>
-                        </div>
                     </td>
                     <td>
-                        <div class="card empty-timetable-card invis">
-                            <div class="card-body">
-                                <i data-feather="plus"></i>
-                            </div>
-                        </div>
                     </td>
                     <td>
-                        <div class="card timetable-card yellow filled invis">
-                            <div class="card-body">
-                              <h5 class="card-title">Mathe</h5>
-                              <h6 class="card-subtitle mb-1">Mauch</h6>
-                              <h6 class="card-subtitle mt-1">009</h6>                   
-                            </div>
-                        </div>
                     </td>
                     <td>
-                        <div class="card empty-timetable-card invis">
-                            <div class="card-body">
-                                <i data-feather="plus"></i>
-                            </div>
-                        </div>
                     </td>
                     <td>
-                        <div class="card empty-timetable-card invis">
-                            <div class="card-body">
-                                <i data-feather="plus"></i>
-                            </div>
-                        </div>
                     </td>
                 </tr>
                 <tr>
                     <th scope="row">2</th>
                     <td >
-                        <div class="card timetable-card blue filled invis">
-                            <div class="card-body">
-                              <h5 class="card-title">Mathe</h5>
-                              <h6 class="card-subtitle mb-1">Mauch</h6>
-                              <h6 class="card-subtitle mt-1">009</h6>                   
-                            </div>
-                        </div>
                     </td>
                     <td>
-                        <div class="card empty-timetable-card invis">
-                            <div class="card-body">
-                                <i data-feather="plus"></i>
-                            </div>
-                        </div>
                     </td>
                     <td>
-                        <div class="card timetable-card yellow filled invis">
-                            <div class="card-body">
-                              <h5 class="card-title">Mathe</h5>
-                              <h6 class="card-subtitle mb-1">Mauch</h6>
-                              <h6 class="card-subtitle mt-1">009</h6>                   
-                            </div>
-                        </div>
                     </td>
                     <td>
-                        <div class="card empty-timetable-card invis">
-                            <div class="card-body">
-                                <i data-feather="plus"></i>
-                            </div>
-                        </div>
                     </td>
                     <td>
-                        <div class="card empty-timetable-card invis">
-                            <div class="card-body">
-                                <i data-feather="plus"></i>
-                            </div>
-                        </div>
                     </td>
                 </tr>
             </thead>
@@ -194,6 +108,14 @@
     <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-firestore.js"></script>
+
+    <script id="lessonTemplate" type="text/html">
+        <div class="card-body">
+            <h5 class="card-title">Mathe</h5>
+            <h6 class="card-subtitle mb-1">Mauch</h6>
+            <h6 class="card-subtitle mt-1">009</h6>                   
+        </div>
+    </script>
 
     <script>
 
@@ -228,8 +150,8 @@
     feather.replace();
 
     </script>
-    <script src="/js/checker.js"></script>
-    <script src="/js/timetable.js"></script>
 
+    <script src="/js/checker.js"></script>
+    <script src="/js/main.js"></script>
 </body>
 </html>
