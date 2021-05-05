@@ -1,6 +1,5 @@
 const logout = document.querySelector('#logout-btn');
 const login = document.querySelector('#login-btn')
-const inserter = document.querySelector('#insert-subject-btn');
 
 var emptyCells = document.getElementsByClassName('clickable');
 var addModal = new bootstrap.Modal(document.getElementById('exampleModal'));
@@ -31,15 +30,6 @@ window.addEventListener('load', (e) => {
     });
 });
 
-inserter.addEventListener('click', (e) => {
-
-    e.preventDefault();
-    var newItem = document.createElement('div');
-    newItem.classList.add("replacer");
-    newItem.innerHTML= 'replace me!';
-    emptyCells[lastclicked].parentNode.replaceChild(newItem, emptyCells[lastclicked]);
-
-})
 
 logout.addEventListener('click', (e) => {
     

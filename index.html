@@ -16,18 +16,26 @@
     <!-- Modal -->
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-            ...
-            </div>
-            <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary" id="insert-subject-btn">Save changes</button>
-            </div>
+        <div class="modal-content p-5">
+            <form id="addSubjectForm">
+                <div class="mb-3">
+                  <label for="colorInput" class="form-label">Color</label>
+                  <input type="text" class="form-control" id="colorInput">
+                </div>
+                <div class="mb-3">
+                    <label for="nameInput" class="form-label">Name</label>
+                    <input type="text" class="form-control" id="nameInput">
+                </div>
+                <div class="mb-3">
+                    <label for="roomInput" class="form-label">Room</label>
+                    <input type="text" class="form-control" id="roomInput">
+                </div>
+                <div class="mb-3">
+                    <label for="teacherInput" class="form-label">Teacher</label>
+                    <input type="text" class="form-control" id="teacherInput">
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+              </form>
         </div>
         </div>
     </div>
@@ -50,7 +58,7 @@
         <table class="table table-bordered" id="sample-timetable">
             <thead>
                 <tr>
-                    <th scope="col"></th>
+                    <th scope="col" id="classTablename"></th>
                     <th scope="col">Montag</th>
                     <th scope="col">Dienstag</th>
                     <th scope="col">Mittwoch</th>
@@ -152,6 +160,7 @@
     </script>
 
     <script src="/js/checker.js"></script>
+    <script src="/js/addSubject.js"></script>
     <script src="/js/main.js"></script>
 </body>
 </html>
